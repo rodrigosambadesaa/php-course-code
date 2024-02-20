@@ -5,7 +5,7 @@ header('Content-type: application/json; charset=utf-8');
 
 $conexion = new mysqli('localhost', 'root', '', 'curso_php_ajax');
 
-if($conexion->connect_errno){
+if ($conexion->connect_errno) {
 	$respuesta = [
 		'error' => true
 	];
@@ -14,10 +14,10 @@ if($conexion->connect_errno){
 	$statement = $conexion->prepare("SELECT * FROM usuarios");
 	$statement->execute();
 	$resultados = $statement->get_result();
-	
+
 	$respuesta = [];
-	
-	while($fila = $resultados->fetch_assoc()){
+
+	while ($fila = $resultados->fetch_assoc()) {
 		$usuario = [
 			'id' 		=> $fila['ID'],
 			'nombre' 	=> $fila['nombre'],

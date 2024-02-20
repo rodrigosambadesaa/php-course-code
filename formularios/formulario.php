@@ -24,13 +24,13 @@ if (isset($_POST['submit'])) {
 		$correo = filter_var($correo, FILTER_SANITIZE_EMAIL);
 
 		if (!filter_var($correo, FILTER_VALIDATE_EMAIL)){
-			$errores .= 'Por favor ingresa un correo valido <br />';
+			$errores .= 'Por favor ingresa un correo valido <br>';
 		} else {
 			echo 'Tu correo es: ' . $correo;
 		}
 
 	} else {
-		$errores .= 'Por favor ingresa un correo <br />';
+		$errores .= 'Por favor ingresa un correo <br>';
 	}
 
 }
